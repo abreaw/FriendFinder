@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friend Finder</title>
+
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+	<style type="text/css">
+
+		.jumbotron {
+			text-align: center;
+		}
+
+		.question-border{
+			border: solid 1px #D3D3D3;
+			padding: 4px 16px;
+			border-radius: 5px;
+		}
+
+		.question-text{
+			font-size: large;
+		}
+
+		.radio-label-text{
+			font-size: x-large;
+		}
+
+		.alternate-row-highlight{
+			background-color: #D6F6FE;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Meet a Friend</h1>
+			<!-- <img src="https://blog.lareviewofbooks.org/wp-content/uploads/2017/01/AFAF.jpg" class="img" alt="asking for a friend" style="width:50%;height:50%;"> -->
+			<img src="https://cdn.pixabay.com/photo/2016/12/20/22/33/family-1921664_960_720.png" class="img" alt="friends chain" style="width:50%;height:50%;">
+		</div>
+
+		<div class="panel-group">
+
+		    <div class="panel panel-info">
+				<div class="panel-heading">Complete the following questions to find your compatible friend.</div>
+				<div class="panel-body text-info">
+					<form>
+						<div class="form-group">
+						    <label class="question-text" for="exampleFormControlInput1">Your Name:</label>
+						    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex. John Smith">
+						</div>
+						<div class="form-group">
+						    <label class="question-text" for="exampleFormControlInput1">Profile Image Link:</label>
+						    <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="ex. https://i.imgur.com/t0MRiAf.png">
+						</div>
+<!-- 						<div class="form-group">
+							<label class="question-text" for="exampleFormControlSelect1">You are quick to make decisions.</label>
+							<select class="form-control" id="exampleFormControlSelect1" placeholder="Select an Option">
+								<option>1 (Strongly Disagree)</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5 (Strongly Agree)</option>
+							</select>
+						</div> -->
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You are quick to make decisions.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You like to learn new things.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You are adventurous in your eating.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You feel guilty about things often.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You have a good amount of free time.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You like to throw parties.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You strive for perfection.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You like to be in control.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You are more mature than your peers.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<div class="form-group question-border question-text alternate-row-highlight">
+							<label class="text-info" for="exampleFormControlSelect1">You like listening to others talk about their experiences.</label>
+							<div class="form-check form-check-inline">
+								<span>Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
+								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
+								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
+								<span> ... Strongly Agree</span>
+							</div>
+						</div>
+						<button class="btn btn-primary" id="survey-submit" type="submit">Submit</button>
+					</form>
+				</div>
+		    </div>
+
+
+		<a href="/api/friends" id="api-link">View Friends List API</a>
+
+	</div>
+
+
+</body>
+</html>
