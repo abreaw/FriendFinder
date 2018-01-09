@@ -5,6 +5,8 @@
 
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 	<style type="text/css">
 
@@ -30,6 +32,15 @@
 			background-color: #D6F6FE;
 		}
 
+		.add-left-padding{
+			padding-left: 16px;
+		}
+
+		.error-display{
+			background-color: #FDE3E6;
+			border: solid 2px #FE8D9C;
+		}
+
 
 	</style>
 
@@ -50,12 +61,12 @@
 				<div class="panel-body text-info">
 					<form>
 						<div class="form-group">
-						    <label class="question-text" for="exampleFormControlInput1">Your Name:</label>
-						    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ex. John Smith">
+						    <label class="question-text" for="name-input">Your Name:</label>
+						    <input type="text" class="form-control" id="name-input" placeholder="ex. John Smith">
 						</div>
 						<div class="form-group">
-						    <label class="question-text" for="exampleFormControlInput1">Profile Image Link:</label>
-						    <input type="url" class="form-control" id="exampleFormControlInput1" placeholder="ex. https://i.imgur.com/t0MRiAf.png">
+						    <label class="question-text" for="profile-img-link">Profile Image Link:</label>
+						    <input type="url" class="form-control" id="profile-img-link" placeholder="ex. https://i.imgur.com/t0MRiAf.png">
 						</div>
 <!-- 						<div class="form-group">
 							<label class="question-text" for="exampleFormControlSelect1">You are quick to make decisions.</label>
@@ -68,184 +79,187 @@
 							</select>
 						</div> -->
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You are quick to make decisions.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<label class="text-info">You are quick to make decisions.</label>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest1" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest1" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest1" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest1" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest1" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You like to learn new things.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<label class="text-info">You like to learn new things.</label>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest2" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest2" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest2" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest2" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest2" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You are adventurous in your eating.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest3" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest3" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest3" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest3" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest3" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You feel guilty about things often.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest4" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest4" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest4" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest4" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest4" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You have a good amount of free time.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest5" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest5" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest5" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest5" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest5" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You like to throw parties.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest6" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest6" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest6" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest6" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest6" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You strive for perfection.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest7" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest7" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest7" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest7" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest7" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You like to be in control.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest8" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest8" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest8" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest8" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest8" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You are more mature than your peers.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest9" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest9" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest9" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest9" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest9" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
 							<label class="text-info" for="exampleFormControlSelect1">You like listening to others talk about their experiences.</label>
-							<div class="form-check form-check-inline">
-								<span>Strongly Disagree ... </span>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-								<label class="form-check-label radio-label-text" for="inlineRadio1">1 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-								<label class="form-check-label radio-label-text" for="inlineRadio2">2 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">3 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">4 </label>
-								<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option5">
-								<label class="form-check-label radio-label-text" for="inlineRadio3">5 </label>
-								<span> ... Strongly Agree</span>
+							<div class="form-check form-check-inline radio-label-text">
+								<span class="question-text">Strongly Disagree ... </span>
+								<input class="form-check-input" type="radio" name="quest10" value="1"> 1 
+								<input class="form-check-input" type="radio" name="quest10" value="2"> 2 
+								<input class="form-check-input" type="radio" name="quest10" value="3"> 3 
+								<input class="form-check-input" type="radio" name="quest10" value="4"> 4 
+								<input class="form-check-input" type="radio" name="quest10" value="5"> 5 
+								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
-						<button class="btn btn-primary" id="survey-submit" type="submit">Submit</button>
+						<button class="btn btn-primary btn-large btn-block" id="survey-submit" type="submit">Submit</button>
 					</form>
 				</div>
 		    </div>
 
-
+		<hr>
 		<a href="/api/friends" id="api-link">View Friends List API</a>
 
 	</div>
+
+<script type="text/javascript">
+	
+$("#survey-submit").on("click", function() {
+
+	event.preventDefault();
+	console.log("submit button clicked take action now");
+
+	var userName = $("#name-input").val().trim();
+	var imgLink = $("#profile-img-link").val().trim();
+
+	var surveyArray = [];
+	var questionNum = 10;
+
+	var isValid = true;
+
+	// for (var i = 1; i <= questionNum; i++) {
+	// 	surveyArray.push()
+	// }
+
+	var q1Value = $("input[name='quest1']:checked").val();
+	var q2Value = $("input[name='quest2']:checked").val();
+
+	console.log("username = ", userName);
+	console.log("pic link = ", imgLink);
+	console.log("question 1 selection = ", q1Value);
+	console.log("question 2 selection = ", q2Value);
+
+	$(".form-control").each(function(){
+
+		if ( $(this).val() === "") {
+			isValid = false;
+			$(this).addClass("error-display");
+			$(this).focus();
+			// maybe add modal handler here too ??
+
+			console.log("field not completed = ", $(this).attr("id"));
+		}
+
+	});
+
+	var checkRadioInputs = $("input[type=radio]:checked");
+	var notcheckedRadioInputs = $("input[type=radio]:not(:checked)");
+
+	console.log(checkRadioInputs);
+	console.log(notcheckedRadioInputs);
+
+
+
+});
+
+
+</script>
 
 
 </body>
