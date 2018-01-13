@@ -3,10 +3,10 @@
 <head>
 	<title>Friend Finder</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 	<style type="text/css">
 
@@ -48,6 +48,7 @@
 <body>
 
 	<div class="container">
+
 		<div class="jumbotron">
 			<h1>Meet a Friend</h1>
 			<!-- <img src="https://blog.lareviewofbooks.org/wp-content/uploads/2017/01/AFAF.jpg" class="img" alt="asking for a friend" style="width:50%;height:50%;"> -->
@@ -103,7 +104,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You are adventurous in your eating.</label>
+							<label class="text-info">You are adventurous in your eating.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest3" value="1"> 1 
@@ -115,7 +116,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You feel guilty about things often.</label>
+							<label class="text-info">You feel guilty about things often.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest4" value="1"> 1 
@@ -127,7 +128,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You have a good amount of free time.</label>
+							<label class="text-info">You have a good amount of free time.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest5" value="1"> 1 
@@ -139,7 +140,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You like to throw parties.</label>
+							<label class="text-info">You like to throw parties.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest6" value="1"> 1 
@@ -151,7 +152,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You strive for perfection.</label>
+							<label class="text-info">You strive for perfection.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest7" value="1"> 1 
@@ -163,7 +164,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You like to be in control.</label>
+							<label class="text-info">You like to be in control.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest8" value="1"> 1 
@@ -175,7 +176,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You are more mature than your peers.</label>
+							<label class="text-info">You are more mature than your peers.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest9" value="1"> 1 
@@ -187,7 +188,7 @@
 							</div>
 						</div>
 						<div class="form-group question-border question-text alternate-row-highlight">
-							<label class="text-info" for="exampleFormControlSelect1">You like listening to others talk about their experiences.</label>
+							<label class="text-info">You like listening to others talk about their experiences.</label>
 							<div class="form-check form-check-inline radio-label-text">
 								<span class="question-text">Strongly Disagree ... </span>
 								<input class="form-check-input" type="radio" name="quest10" value="1"> 1 
@@ -198,65 +199,231 @@
 								<span class="question-text"> ... Strongly Agree</span>
 							</div>
 						</div>
-						<button class="btn btn-primary btn-large btn-block" id="survey-submit" type="submit">Submit</button>
+						<button class="btn btn-primary btn-large btn-block" id="survey-submit" type="submit" data-toggle="modal" data-target="#err-modal">Submit</button>
 					</form>
-				</div>
-		    </div>
+				</div> <!-- End Panel Body -->
+		    </div> <!-- End Panel -->
+		</div> <!-- End Panel Group -->
 
 		<hr>
-		<a href="/api/friends" id="api-link">View Friends List API</a>
+		<a href="/api/friends" id="api-link">View Friends List API</a>  | 
+		<a href="https://github.com/abreaw/FriendFinder">GitHub Repo</a>
 
-	</div>
+		<!-- The Modal -->
+		<div class="modal fade" id="err-modal">
+			<div class="modal-dialog">
+		    	<div class="modal-content">
+		      
+		        <!-- Modal Header -->
+		        <div class="modal-header">
+		        	<h4 class="modal-title">Eror</h4>
+		        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        
+		        <!-- Modal body -->
+		        <div class="modal-body">
+		        	Please complete all the fields in the survey.
+		        </div>
+		        
+		        <!-- Modal footer -->
+		        <div class="modal-footer">
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        </div>
+		        
+		      </div>  <!-- end modal-content -->
+		    </div>  <!-- end modal-dialog -->
+		</div>  <!-- end Modal -->
+
+	</div> <!-- End container -->
 
 <script type="text/javascript">
-	
-$("#survey-submit").on("click", function() {
 
-	event.preventDefault();
-	console.log("submit button clicked take action now");
+$(document).ready(function(){
 
-	var userName = $("#name-input").val().trim();
-	var imgLink = $("#profile-img-link").val().trim();
+	$("#survey-submit").on("click", function() {
 
-	var surveyArray = [];
-	var questionNum = 10;
+		event.preventDefault();
+		console.log("submit button clicked take action now");
 
-	var isValid = true;
+		clearPrevErrors();
 
-	// for (var i = 1; i <= questionNum; i++) {
-	// 	surveyArray.push()
-	// }
+		var userName = $("#name-input").val().trim();
+		var imgLink = $("#profile-img-link").val().trim();
 
-	var q1Value = $("input[name='quest1']:checked").val();
-	var q2Value = $("input[name='quest2']:checked").val();
+		var surveyArray = [];
+		var questionNum = 10;
 
-	console.log("username = ", userName);
-	console.log("pic link = ", imgLink);
-	console.log("question 1 selection = ", q1Value);
-	console.log("question 2 selection = ", q2Value);
+		var isValid = true;
 
-	$(".form-control").each(function(){
+		// var q1Value = $("input[name='quest1']:checked").val();
+		// var q2Value = $("input[name='quest2']:checked").val();
+		// var q3Value = $("input[name='quest3']:checked").val();
+		// var q4Value = $("input[name='quest4']:checked").val();
+		// var q5Value = $("input[name='quest5']:checked").val();
+		// var q6Value = $("input[name='quest6']:checked").val();
+		// var q7Value = $("input[name='quest7']:checked").val();
+		// var q8Value = $("input[name='quest8']:checked").val();
+		// var q9Value = $("input[name='quest9']:checked").val();
+		// var q10Value = $("input[name='quest10']:checked").val();
 
-		if ( $(this).val() === "") {
-			isValid = false;
-			$(this).addClass("error-display");
-			$(this).focus();
-			// maybe add modal handler here too ??
 
-			console.log("field not completed = ", $(this).attr("id"));
+		// could do this as a $(".form-group").each function(){}
+		// as used in the below form-control loop ... would need to get the name of the child for each parent element
+		// then check to see if there is a checked value ... if there isn't then assign the error-display class
+		// to that parent element and send focus to it too
+		for (var i = 1; i <= questionNum; i++) {
+
+			var currAnswer = $("input[name='quest" + i +"']:checked").val()
+			
+			if (currAnswer != undefined){
+
+				surveyArray.push(parseInt(currAnswer));
+
+			} else {
+
+				isValid = false;
+
+				var blankQuestion = "input[name='quest" + i + "']";
+				// var blankQuestParent = $(blankQuestion + ":parent");
+				// var blankQuestParent = $(blankQuestion).parents(); // returns all the parents for the blankQuestion input item
+				var blankQuestParent = $(blankQuestion).parents(".form-group");
+
+				// console.log("parent element");
+				// console.log($(blankQuestParent).attr("class"));
+				// console.log(blankQuestParent);
+				// console.log("this question is not completed", blankQuestion);
+
+				// adds the error highlight to the form-group so the background color can highlight that it wasn't completed
+				$(blankQuestParent).addClass("error-display");
+				$(blankQuestParent).focus();
+
+				// maybe add modal handler here too ??
+
+				// console.log("field not completed = ", $(blankQuestion).attr("name"));
+			}
+			
+
 		}
 
-	});
+		// console.log("username = ", userName);
+		// console.log("pic link = ", imgLink);
+		// console.log("surveyArray = ");
+		// console.log(surveyArray);
 
-	var checkRadioInputs = $("input[type=radio]:checked");
-	var notcheckedRadioInputs = $("input[type=radio]:not(:checked)");
+		$(".form-control").each(function(){
 
-	console.log(checkRadioInputs);
-	console.log(notcheckedRadioInputs);
+			if ( $(this).val() === "") {
+				isValid = false;
+				$(this).addClass("error-display");
+				$(this).focus();
+				// maybe add modal handler here too ??
+
+				console.log("field not completed = ", $(this).attr("id"));
+
+			}
+
+		});
+
+
+		// var checkRadioInputs = $("input[type=radio]:checked"); // returns all the input radio buttons that are checked
+		// // var notcheckedRadioInputs = $("input[type=radio]:not(:checked)"); // returns all the input raido buttons that are not selected
+
+		// if (checkRadioInputs.length != 10) {
+
+		// 	console.log("radio inputs not completed fully");
+		// 	// $('#err-modal').modal('show');
+		// 	// $("#err-modal").attr("display", "show"); 
+		// 	// can't get modal to show up with either line above ... not sure the issue
+
+		// 	alert("Please complete all fields in the survey");
+
+		// 	console.log(checkRadioInputs);
+		// 	// console.log(notcheckedRadioInputs);
+
+		// 	isValid = false;
+
+		// }
+
+
+		// submit data from form if all survey questions answered
+		if (isValid) {
+
+			// setup user data object
+			var userSurveyInfo = {
+
+				name: userName,
+				photo: imgLink,
+				scores: surveyArray
+			}
+
+			console.log("userSurveyInfo = ");
+			console.log(userSurveyInfo);
+
+			
+			// send user data object to the server
+			$.post("/api/friends", userSurveyInfo, function(data) {
+
+				console.log("----------------------------------------");
+				console.log("new friend added", userSurveyInfo);
+				console.log("----------------------------------------");
+
+				// $.get("/results", function(data) {
+
+				// 	console.log("get call started for best friend results");
+					
+					console.log("data back from the post call");
+					console.log("---------------------------------------");
+					console.log(data);
+					console.log("---------------------------------------");
+					
+					// data should contain the friend information to setup the html page so need to add jquery to put the data into the page once the page is requested
+					// how do i make the user go to that location in the url? ... location.??
+
+					/* ... example from the book sequelize project
+					// Create a parent div to hold book data
+				    var wellSection = $("<div>");
+				    // Add a class to this div: 'well'
+				    wellSection.addClass("well");
+				    // Add an id to the well to mark which well it is
+				    wellSection.attr("id", "book-well-" + i);
+				    // Append the well to the well section
+				    $("#well-section").append(wellSection);
+				    */
+
+				// });
+
+				// Clear the form after submitting
+				// $("#name-input").val("");
+				// $("#profile-img-link").val("");
+				// $("input[name^=quest]:checked").val(""); // ^ allows the input name to start with 'quest'
+
+			});
+
+
+			// if no errors sending object then display friend found
+
+
+		} else {
+
+			// show an error but this is not working :(
+			// $("#err-model").show();
+			// $('#err-modal').modal('show');
+			// $("#err-modal").attr("display", "show"); 
+			// can't get modal to show up with either line above ... not sure the issue
+
+			alert("Please complete all fields in the survey");
+		}
 
 
 
-});
+	});  // end of submit click function
+
+	function clearPrevErrors() {
+
+		$(".error-display").removeClass("error-display");
+	}
+
+});  // end of Document Ready Function
 
 
 </script>

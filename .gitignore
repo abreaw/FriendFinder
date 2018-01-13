@@ -1,0 +1,2 @@
+# ignore all the node modules folders installed locally
+node_modules

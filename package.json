@@ -1,0 +1,17 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "Allows the user to complete a survey and then compares the results to other users that have already completed the survey.  Shows the user which friend they are most compatible with based on survey answers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Brea Torres",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
