@@ -23,6 +23,9 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true })); // changed to allow array to be passed properly
 app.use(bodyParser.json());
 
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/public'));
+
 // ================================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
