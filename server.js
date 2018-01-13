@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // changed to allow array to
 app.use(bodyParser.json());
 
 // make express look in the public directory for assets
-app.use(express.static(__dirname + '../public'));
+app.use(express.static(__dirname + './app/public'));
 
 // ================================================================================
 // ROUTER
