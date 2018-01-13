@@ -32,7 +32,7 @@ module.exports = function(app) {
 		console.log(req.body);
 		console.log(req.body.name);
 		console.log(req.body.photo);
-		// console.log(req.body.scores);
+		// console.log(req.body.scores); // couldn't get scores to work ... had to make sure the ({ extended: true }) was set in the server.js file
 		// console.log(req.body.scores.length);
 
 		// calculate new user survey totals
