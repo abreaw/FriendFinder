@@ -5,9 +5,9 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
 	<style type="text/css">
 
 		.jumbotron {
@@ -41,6 +41,10 @@
 			border: solid 2px #FE8D9C;
 		}
 
+		#results-panel{
+			visibility: hidden;
+		}
+
 
 	</style>
 
@@ -52,10 +56,10 @@
 		<div class="jumbotron">
 			<h1>Meet a Friend</h1>
 			<!-- <img src="https://blog.lareviewofbooks.org/wp-content/uploads/2017/01/AFAF.jpg" class="img" alt="asking for a friend" style="width:50%;height:50%;"> -->
-			<img src="https://cdn.pixabay.com/photo/2016/12/20/22/33/family-1921664_960_720.png" class="img" alt="friends chain" style="width:50%;height:50%;">
+			<img src="family-1921664_960_720.png" class="img" alt="friends chain" style="width:50%;height:50%;">
 		</div>
 
-		<div class="panel-group">
+		<div class="panel-group" id="survey-panel">
 
 		    <div class="panel panel-info">
 				<div class="panel-heading">Complete the following questions to find your compatible friend.</div>
@@ -204,6 +208,25 @@
 				</div> <!-- End Panel Body -->
 		    </div> <!-- End Panel -->
 		</div> <!-- End Panel Group -->
+
+		<div class="panel-group" id="results-panel">
+
+		    <div class="panel panel-info">
+				<div class="panel-heading">This is your best friend!</div>
+				<div class="panel-body text-info">
+					<h2 id="results-name"></h2>
+					<img src="#" class="img-thumbnail" alt="Best Friend Results Pic" id="results-img">
+				</div>
+				<div class="panel-footer">
+
+					<a href="/survey">
+						<button class="btn btn-primary btn-large btn-block" id="toSurveyBtn" type="">Back to Survey</button>
+					</a>
+					<!-- <button class="btn btn-primary btn-large btn-block" id="show-survey">Go Back to Survey</button> -->
+				</div>
+			</div> <!-- End of panel info for results -->
+
+		</div> <!-- End of panel group for results -->
 
 		<hr>
 		<a href="/api/friends" id="api-link">View Friends List API</a>  | 
@@ -375,6 +398,20 @@ $(document).ready(function(){
 					console.log("---------------------------------------");
 					console.log(data);
 					console.log("---------------------------------------");
+
+					// put result info from data above into the results panel elements
+					$("#results-name").text(data.name);
+					$("#results-img").attr("src", data.picLink);
+
+					// hide the survey panel
+					// $("#panel-survey").css("visibility", "hidden");
+					// $("#survey-panel").css("visibility", "hidden");
+					$("#survey-panel").hide(1000);
+
+					// show the results panel
+					// $("#panel-results").visibility("show");
+					$("#results-panel").css("visibility", "visible");
+					// $("#results-panel").show(1000);
 					
 					// data should contain the friend information to setup the html page so need to add jquery to put the data into the page once the page is requested
 					// how do i make the user go to that location in the url? ... location.??
@@ -417,6 +454,15 @@ $(document).ready(function(){
 
 
 	});  // end of submit click function
+
+	// $("#show-survey").on("click", function() {
+
+
+
+
+	// }); // end of go back to survey button click function
+
+
 
 	function clearPrevErrors() {
 
